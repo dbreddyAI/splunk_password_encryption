@@ -3,13 +3,15 @@
 ## Example usage:
 
 import splunkencrypt<br/>
-mypassword='password'<br/><br/>
+pwd='password'<br/><br/>
 #Note: you really only need the first 16 bytes of your splunk.secret<br/>
-splunk_secret='rBFTWO8gGZh0X7K0ugzGL7j.jeM.sbHxYEjWhK4zHiHC5QCVKF/byXopYr3TZHVANOplqC93K2EsieH/Z.mCTgVb32a4qeNoD/9zyWEs.8yEWhTExzR9rcmX4xaAnPId.GE3OkgKE6Bh4ploTP0KoVd8rHkudDjwrLgsGe82mCscIjZRQcOHFsUmtkBNe3zkaAiFmaYh1UK1kJC6VK/qTCw4KLSzff7N7LG0htvkjOdNRUpoFT.8pQZnBhVjl3'<br/><br/>
-x=splunkencrypt.encrypt(mypassword,splunk_secret)<br/>
-y=splunkencrypt.decrypt(x,splunk_secret[0:16])<br/><br/>
-print x<br/>
-print y<br/>
+splunk_secret='rBFTWO8gGZh0X7K0XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'<br/><br/>
+x=splunkencrypt.encrypt(pwd,splunk_secret)<br/>
+y=splunkencrypt.decrypt(x,splunk_secret)<br/><br/>
+print x + '\n' + y<br/><br/>
+x=splunkencrypt.encrypt_pass4SymmKey(pwd,splunk_secret)<br/>
+y=splunkencrypt.decrypt(x,splunk_secret)<br/><br/>
+print x + '\n' + y<br/><br/>
 
 
 ## Acknowledgments
