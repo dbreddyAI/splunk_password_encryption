@@ -10,7 +10,7 @@ x=splunkencrypt.encrypt(pwd,splunk_secret)<br/>
 y=splunkencrypt.decrypt(x,splunk_secret)<br/><br/>
 print x + '\n' + y<br/><br/>
 x=splunkencrypt.encrypt_pass4SymmKey(pwd,splunk_secret)<br/>
-y=splunkencrypt.decrypt(x,splunk_secret)<br/><br/>
+y=splunkencrypt.decrypt_pass4SymmKey(x,splunk_secret)<br/><br/>
 print x + '\n' + y<br/><br/>
 
 
