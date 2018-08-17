@@ -3,6 +3,7 @@
 
 import base64
 import sys
+import os
 
 
 def encrypt(plaintext,splunk_secret):
@@ -54,6 +55,8 @@ def decrypt_pass4SymmKey(ciphertext,splunk_secret):
     return plaintext
 
 
+def generate_splunk_secret():
+    return os.urandom(255).encode("base64").strip().replace("+",".")
 
 def unpack(text):
     return [ord(c) for c in text]
